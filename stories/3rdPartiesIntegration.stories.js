@@ -13,6 +13,13 @@ stories.add('Airbnb Rheostat', () =>
 );
 
 class AirbnbRheostat extends React.Component {
+stories.add('Airbnb Rheostat', () =>
+   <WrapWithHits >
+    <AirbnbRheostatConnected attributeName="price"/>
+  </WrapWithHits>
+);
+
+class AirbnbRheostat extends React.Component {
 
   static propTypes = {
     min: PropTypes.number.isRequired,
@@ -30,7 +37,9 @@ class AirbnbRheostat extends React.Component {
   }
 
   updateValue(sliderState) {
-    this.props.refine({min: sliderState.values[0], max: sliderState.values[1]});
+    if (sliderState.values[0] !== this.props.min || sliderState.values[1] !== this.props.max) {
+      this.props.refine({min: sliderState.values[0], max: sliderState.values[1]});
+    }
   }
 
   render() {
@@ -42,13 +51,6 @@ class AirbnbRheostat extends React.Component {
           values={[this.props.value.min, this.props.value.max]}
           onChange={this.updateValue}
         />
-        <ol>
-          <lh>Values</lh>
-          <li> {this.props.value.min}
-          </li>
-          <li> {this.props.value.max}
-          </li>
-        </ol>
       </div>
     );
   }
