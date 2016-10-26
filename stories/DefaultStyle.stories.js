@@ -3,7 +3,7 @@ import {storiesOf} from '@kadira/storybook';
 import {
   Toggle, CurrentFilters, HierarchicalMenu,
   Hits, HitsPerPage, Menu, MultiRange, Pagination, PoweredBy, RangeRatings, RangeInput,
-  RefinementList, SearchBox, SortBy, SortByLinks, Stats, HitsPerPageSelect,
+  RefinementList, SearchBox, SortBy, Stats, Reset
 } from '../packages/react-instantsearch/dom';
 import {Wrap} from './util';
 import Slider from './3rdPartiesIntegration.stories';
@@ -51,7 +51,7 @@ stories.add('default with select and Range', () =>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <HitsPerPageSelect items={[{value: 10}, {value: 20}, {value: 30}, {value: 50}]}/>
+            <HitsPerPage currentRefinement={10} items={[{value: 10}, {value: 20}, {value: 30}, {value: 50}]}/>
             <SortBy
               items={[
                 {value: 'ikea', label: 'Featured'},
@@ -62,6 +62,7 @@ stories.add('default with select and Range', () =>
             />
             <Stats />
             <CurrentFilters />
+            <Reset/>
           </div>
           <div>
             <Hits />
@@ -122,10 +123,8 @@ stories.add('default with select and Range', () =>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <HitsPerPage
-              defaultRefinement={4}
-              items={[2, 4, 6, 8]}/>
-            <SortByLinks
+            <HitsPerPage currentRefinement={10} items={[{value: 10}, {value: 20}, {value: 30}, {value: 50}]}/>
+            <SortBy
               items={[
                 {value: 'ikea', label: 'Featured'},
                 {value: 'ikea_price_asc', label: 'Price asc.'},
@@ -135,6 +134,7 @@ stories.add('default with select and Range', () =>
             />
             <Stats />
             <CurrentFilters />
+            <Reset/>
           </div>
           <div>
             <Hits />
@@ -187,7 +187,7 @@ stories.add('default with select and Range', () =>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
           <div style={{display: 'flex', justifyContent: 'space-around'}}>
-            <HitsPerPageSelect items={[{value: 10}, {value: 20}, {value: 30}, {value: 50}]}/>
+            <HitsPerPage currentRefinement={10} items={[{value: 10}, {value: 20}, {value: 30}, {value: 50}]}/>
             <SortBy
               items={[
                 {value: 'ikea', label: 'Featured'},
@@ -198,6 +198,7 @@ stories.add('default with select and Range', () =>
             />
             <Stats />
             <CurrentFilters />
+            <Reset/>
           </div>
           <div>
             <Hits />

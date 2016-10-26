@@ -13,13 +13,6 @@ stories.add('Airbnb Rheostat', () =>
 );
 
 class AirbnbRheostat extends React.Component {
-stories.add('Airbnb Rheostat', () =>
-   <WrapWithHits >
-    <AirbnbRheostatConnected attributeName="price"/>
-  </WrapWithHits>
-);
-
-class AirbnbRheostat extends React.Component {
 
   static propTypes = {
     min: PropTypes.number.isRequired,
