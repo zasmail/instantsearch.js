@@ -6,3 +6,4 @@ npm-debug.log
 .eslintcache
 .idea/
 *.iml
+design/index.css

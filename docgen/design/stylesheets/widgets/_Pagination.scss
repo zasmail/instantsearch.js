@@ -1,0 +1,43 @@
+.ais-Pagination__root{
+}
+
+.ais-Pagination__item {
+  display: inline-block;
+  padding: 3px;
+}
+
+.ais-Pagination__itemSelected {
+  color: #000000;
+  font-weight: bold;
+}
+
+.ais-Pagination__itemDisabled {
+  visibility: visible;
+}
+
+.ais-Pagination__itemDisabled {
+  color: #bbbbbb;
+}
+
+.ais-Pagination__itemDisabled:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+.ais-Pagination__itemFirst {
+}
+
+.ais-Pagination__itemLast {
+}
+
+.ais-Pagination__itemPrevious {
+}
+
+.ais-Pagination__itemNext {
+}
+
+.ais-Pagination__itemPage {
+}
+
+.ais-Pagination__itemLink {
+}

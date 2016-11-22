@@ -3,6 +3,7 @@
   "version": "2.0.0-beta.18",
   "scripts": {
     "start": "NODE_ENV=development babel-node docgen/start.js & npm run storybook & wait",
+    "start:design": "NODE_ENV=development babel-node docgen/design/devServer.js",
     "build": "NODE_ENV=production ./scripts/build.sh",
     "docs:build": "DOCS_DIST=docs/react babel-node docgen/build.js && npm run build-storybook",
     "docs:update": "./scripts/docs:update.sh",

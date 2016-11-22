@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+@import 'widgets/ClearAll',
+        'widgets/CurrentRefinements',
+        'widgets/HierarchicalMenu',
+        'widgets/Hits',
+        'widgets/HitsPerPage',
+        'widgets/InfiniteHits',
+        'widgets/Menu',
+        'widgets/MultiRange',
+        'widgets/Pagination',
+        'widgets/PoweredBy',
+        'widgets/RangeInput',
+        'widgets/RangeRatings',
+        'widgets/RefinementList',
+        'widgets/SearchBox',
+        'widgets/SortBy',
+        'widgets/Stats',
+        'widgets/Toggle';
+
+@import 'site';
