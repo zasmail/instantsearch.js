@@ -24,11 +24,15 @@ const generateStylesheet = () => {
   const processor = postcss([autoprefixer]);
   render({
     file: sourceStylesheet,
-  }, (err, {css}) => {
+  }, (err, result) => {
     if (err) {
-      throw err;
+      console.error(err);
+      return;
     }
-    writeFile(builtStylesheet, processor.process(css, {syntax}).css);
+
+    processor.process(result.css, {syntax})
+      .then(({css: prefixedCss}) => writeFile(builtStylesheet, prefixedCss))
+      .catch(err => console.error(err));
   });
 };
 
