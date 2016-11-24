@@ -106,7 +106,7 @@ bs.init({
   server: source,
   open: false,
   files: [
-    `${source}**/style.css`,
+    `${source}**/index.css`,
     `${source}**/index.html`,
   ],
   watchOptions: {
