@@ -23,6 +23,40 @@ import {
   Toggle,
 } from 'react-instantsearch/dom';
 
+import {
+  connectClearAll,
+  connectCurrentRefinements,
+  connectHierarchicalMenu,
+  connectHits,
+  connectHitsPerPage,
+  connectInfiniteHits,
+  connectMenu,
+  connectMultiRange,
+  connectPagination,
+  connectPoweredBy,
+  connectRefinementList,
+  connectSearchBox,
+  connectSortBy,
+  connectStats,
+  connectToggle,
+} from 'react-instantsearch/connectors';
+
+const NoRender = () => null;
+const AutoSelectMenu = connectMenu(NoRender);
+const AutoSelectRefinementList = connectRefinementList(NoRender);
+const AutoSelectHierarchicalMenu = connectHierarchicalMenu(NoRender);
+
+const Variation = props =>
+<InstantSearch
+  appId="latency"
+  apiKey="6be0576ff61c053d5f9a3225e2a90f76"
+  indexName="ikea"
+>
+  <div>
+    {props.children}
+  </div>
+</InstantSearch>;
+
 const App = () =>
   <InstantSearch
     appId="latency"
@@ -40,22 +74,55 @@ const Facets = () =>
   <h1>Filters</h1>
   <hr/>
 
-  <h2>ClearAll</h2>
-  <ClearAll/>
+  <h2>ClearAll enabled</h2>
+  <Variation>
+    <AutoSelectMenu attributeName="type" defaultRefinement="Mirror" />
+    <ClearAll />
+  </Variation>
   <hr/>
 
-  <h2>CurrentRefinements</h2>
-  <CurrentRefinements/>
+  <h2>ClearAll disabled</h2>
+  <Variation>
+    <ClearAll />
+  </Variation>
   <hr/>
 
-  <h2>HierarchicalMenu</h2>
-  <HierarchicalMenu
-    attributes={[
-      'category',
-      'sub_category',
-      'sub_sub_category',
-    ]}
-  />
+  <h2>CurrentRefinements no refinements</h2>
+  <Variation>
+    <CurrentRefinements/>
+  </Variation>
+  <hr/>
+
+  <h2>CurrentRefinements with refinements</h2>
+  <Variation>
+    <AutoSelectMenu attributeName="type" defaultRefinement="Mirror" />
+    <CurrentRefinements/>
+  </Variation>
+  <hr/>
+
+  <h2>HierarchicalMenu nothing selected</h2>
+  <Variation>
+    <HierarchicalMenu
+      attributes={[
+        'category',
+        'sub_category',
+        'sub_sub_category',
+      ]}
+    />
+  </Variation>
+  <hr/>
+
+  <h2>HierarchicalMenu first level selected</h2>
+  <Variation>
+    <HierarchicalMenu
+      attributes={[
+        'category',
+        'sub_category',
+        'sub_sub_category',
+      ]}
+      defaultRefinement="Bathroom"
+    />
+  </Variation>
   <hr/>
 
   <h2>HitPerPage</h2>
