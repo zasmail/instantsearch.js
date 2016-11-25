@@ -1,8 +1,28 @@
+body {
+  padding: 1em;
+}
+
 .facets {
   width: 50%;
   float:left;
+
+  > div {
+    width: 100%;
+    float: left;
+
+    hr {
+      float: left;
+      margin: 1em 0;
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
 .hits {
   margin-left: 52%;
+  width: 48%;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
