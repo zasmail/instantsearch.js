@@ -70,10 +70,6 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        loader: 'style?insertAt=top',
-      },
-      {
-        test: /\.css$/,
         loader: 'css',
         query: {
           modules: true,
