@@ -75,32 +75,40 @@ const Facets = () =>
   <h1>Filters</h1>
   <hr/>
 
-  <h2>ClearAll enabled</h2>
-  <Variation>
-    <AutoSelectMenu attributeName="type" defaultRefinement="Mirror" />
-    <ClearAll />
-  </Variation>
-  <hr/>
-
+  <div>
+    <h2>ClearAll enabled</h2>
+    <Variation>
+      <AutoSelectMenu attributeName="type" defaultRefinement="Mirror" />
+      <ClearAll />
+    </Variation>
+    <hr/>
+  </div>
+  <div>
   <h2>ClearAll disabled</h2>
   <Variation>
     <ClearAll />
   </Variation>
   <hr/>
+</div>
 
+<div>
   <h2>CurrentRefinements no refinements</h2>
   <Variation>
     <CurrentRefinements/>
   </Variation>
   <hr/>
+</div>
 
+<div>
   <h2>CurrentRefinements with refinements</h2>
   <Variation>
     <AutoSelectMenu attributeName="type" defaultRefinement="Mirror" />
     <CurrentRefinements/>
   </Variation>
   <hr/>
+</div>
 
+<div>
   <h2>HierarchicalMenu nothing selected</h2>
   <Variation>
     <HierarchicalMenu
@@ -112,7 +120,9 @@ const Facets = () =>
     />
   </Variation>
   <hr/>
+</div>
 
+<div>
   <h2>HierarchicalMenu first level selected</h2>
   <Variation>
     <HierarchicalMenu
@@ -125,7 +135,9 @@ const Facets = () =>
     />
   </Variation>
   <hr/>
+</div>
 
+<div>
   <h2>HitPerPage</h2>
   <HitsPerPage
     defaultRefinement={5}
@@ -138,13 +150,17 @@ const Facets = () =>
     }]}
   />
   <hr/>
+</div>
 
+<div>
   <h2>Menu</h2>
   <Menu
     attributeName="type"
   />
   <hr/>
+</div>
 
+<div>
   <h2>MultiRange</h2>
   <MultiRange
     attributeName="price"
@@ -156,13 +172,87 @@ const Facets = () =>
     ]}
   />
   <hr/>
+</div>
 
+<div>
+  <h2>Toggle</h2>
+     <Toggle attributeName="materials"
+        label="foo"
+        value="foo"
+       />
+     <Toggle attributeName="materials"
+        label="bar"
+        value="bar"
+       />
+     <Toggle attributeName="model"
+        label="baz"
+        value="baz"
+       />
+     <Toggle attributeName="model"
+        label="qux"
+        value="qux"
+       />
+     <Toggle attributeName="type"
+        label="foo bar"
+        value="foo bar"
+       />
+      <Toggle attributeName="materials"
+        label="foo"
+        value="foo"
+       />
+     <Toggle attributeName="materials"
+        label="bar"
+        value="bar"
+       />
+     <Toggle attributeName="model"
+        label="baz"
+        value="baz"
+       />
+     <Toggle attributeName="model"
+        label="qux"
+        value="qux"
+       />
+     <Toggle attributeName="type"
+        label="foo bar"
+        value="foo bar"
+       />
+      <Toggle attributeName="materials"
+        label="foo"
+        value="foo"
+       />
+     <Toggle attributeName="materials"
+        label="bar"
+        value="bar"
+       />
+     <Toggle attributeName="model"
+        label="baz"
+        value="baz"
+       />
+     <Toggle attributeName="model"
+        label="qux"
+        value="qux"
+       />
+     <Toggle attributeName="type"
+        label="foo bar"
+        value="foo bar"
+       />
+  <hr/>
+</div>
+
+<div>
   <h2>Pagination</h2>
   <Variation />
-    <Pagination />
+    <Pagination
+    translations={{
+      first: '«',
+      last: '»'
+    }}
+     />
   <Variation />
   <hr/>
+</div>
 
+<div>
   <h2>Pagination page 5 selected</h2>
   <Variation />
     <Pagination
@@ -170,33 +260,55 @@ const Facets = () =>
     />
   <Variation />
   <hr/>
+</div>
 
+<div>
   <h2>PoweredBy</h2>
   <PoweredBy />
   <hr/>
+</div>
 
+<div>
   <h2>RangeInput</h2>
   <RangeInput
     attributeName="price"
   />
   <hr/>
+</div>
 
+<div>
   <h2>RangeRatings</h2>
   <RangeRatings
     attributeName="rating"
   />
   <hr/>
+</div>
 
+<div>
   <h2>RefinementList</h2>
   <RefinementList
     attributeName="materials"
   />
   <hr/>
+</div>
 
+<div>
+  <h2>RefinementList</h2>
+  <Variation>
+    <RefinementList
+      attributeName="materials"
+    />
+  </Variation>
+  <hr/>
+</div>
+
+<div>
   <h2>SearchBox</h2>
   <SearchBox />
   <hr/>
+</div>
 
+<div>
   <h2>SortBy</h2>
   <SortBy
     defaultRefinement="ikea"
@@ -207,11 +319,13 @@ const Facets = () =>
     ]}
   />
   <hr/>
+</div>
 
+<div>
   <h2>Stats</h2>
   <Stats />
   <hr/>
-
+</div>
 </div>;
 
 const Results = () =>

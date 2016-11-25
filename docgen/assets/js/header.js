@@ -118,6 +118,11 @@ export default function initHeader() {
   }
 
   function displayDropdown() {
+
+    function isHover(e) {
+      return (e.parentElement.querySelector(':hover') === e);
+    }
+
     let active = false;
     const trigger = document.querySelector('.cm-navigation__brands--community');
     document.querySelector('body').addEventListener('click', () => {
@@ -126,11 +131,19 @@ export default function initHeader() {
       }
     });
 
-    trigger.addEventListener('click', e => {
+    trigger.addEventListener('mouseover', e => {
       e.stopPropagation();
       e.preventDefault();
       toggle();
     });
+
+    document.body.addEventListener('mousemove', e => {
+      if (isHover(document.querySelector('.cm-navigation__brands-dropdown'))) {
+        console.log('dropdown hovered')
+      } else {
+        console.log('dropdown left')
+      }
+    })
 
     function toggle() {
       active = !active;

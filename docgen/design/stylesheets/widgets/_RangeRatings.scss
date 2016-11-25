@@ -9,12 +9,16 @@
 }
 
 .ais-RangeRatings__ratingIconEmpty:before {
-  content: '\2606';
-  color: #FBAE00;
+  content: '\2605';
+  color: #bfc7d8;
 }
-
+.ais-RangeRatings__ratingLink{
+  text-decoration: none;
+  color: #55606e;
+  font-weight: 400;
+}
 .ais-RangeRatings__ratingLinkSelected{
-  font-weight: 700;
+  color: $main-color;
 }
 
 .ais-RangeRatings__ratingCountDisabled{
@@ -44,13 +48,12 @@
 .ais-RangeRatings__ratingIconEmptySelected {
 }
 
-.ais-RangeRatings__ratingCountSelected {
-}
-
 .ais-RangeRatings__ratingCount{
+  color: rgba(#55606e, 0.4);
 }
 
-.ais-RangeRatings__ratingLink{
+.ais-RangeRatings__ratingCountSelected {
+    color: rgba($main-color, 0.4);
 }
 
 .ais-RangeRatings__ratingLinkDisabled{

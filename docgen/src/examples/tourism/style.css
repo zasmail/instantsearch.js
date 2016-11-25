@@ -50,7 +50,7 @@ body {
   color: #DCE0E0;
 }
 
-.ais-SearchBox__root {
+body.example .ais-SearchBox__root {
   position: absolute;
   width: 280px;
   height: 33px;
@@ -61,12 +61,12 @@ body {
   left: 165px;
 }
 
-.ais-SearchBox__wrapper {
+body.example .ais-SearchBox__wrapper {
   width: 100%;
   height: 100%;
 }
 
-.ais-SearchBox__input {
+body.example .ais-SearchBox__input {
   display: inline-block;
   -webkit-transition: box-shadow .4s ease, background .4s ease;
   transition: box-shadow .4s ease, background .4s ease;
@@ -85,41 +85,41 @@ body {
   appearance: none;
 }
 
-.ais-SearchBox__input::-webkit-search-decoration, .ais-SearchBox__input::-webkit-search-cancel-button, .ais-SearchBox__input::-webkit-search-results-button, .ais-SearchBox__input::-webkit-search-results-decoration {
+body.example .ais-SearchBox__input::-webkit-search-decoration, body.example .ais-SearchBox__input::-webkit-search-cancel-button, body.example .ais-SearchBox__input::-webkit-search-results-button, body.example .ais-SearchBox__input::-webkit-search-results-decoration {
   display: none;
 }
 
-.ais-SearchBox__input:hover {
+body.example .ais-SearchBox__input:hover {
   box-shadow: inset 0 0 0 0px #b3b3b3;
 }
 
-.ais-SearchBox__input:focus, .SearchBox__input:active {
+body.example .ais-SearchBox__input:focus, .SearchBox__input:active {
   outline: 0;
   box-shadow: inset 0 0 0 0px #D6DEE3;
   background: #FFFFFF;
 }
 
-.ais-SearchBox__input::-webkit-input-placeholder {
+body.example .ais-SearchBox__input::-webkit-input-placeholder {
   color: #9AAEB5;
 }
 
-.ais-SearchBox__input::-moz-placeholder {
+body.example .ais-SearchBox__input::-moz-placeholder {
   color: #9AAEB5;
 }
 
-.ais-SearchBox__input:-ms-input-placeholder {
+body.example .ais-SearchBox__input:-ms-input-placeholder {
   color: #9AAEB5;
 }
 
-.ais-SearchBox__input::placeholder {
+body.example .ais-SearchBox__input::placeholder {
   color: #9AAEB5;
 }
 
-.ais-SearchBox__submit {
+body.example .ais-SearchBox__submit {
   display: none;
 }
 
-.ais-SearchBox__reset {
+body.example .ais-SearchBox__reset {
   display: none;
 }
 
