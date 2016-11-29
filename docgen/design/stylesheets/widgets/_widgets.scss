@@ -6,9 +6,10 @@
 
   font-family: 'Open Sans', sans-serif;
 
-  &[disabled] {
-    opacity: 0.8;
-    cursor: not-allowed;
+  &[disabled],
+  &:disabled  {
+    opacity: 0.5;
+    pointer-events: none
   }
 
   input,
@@ -37,12 +38,15 @@
     border-radius: 4px;
     background-color: #ffffff;
     border: solid 1px #d4d8e3;
+    appearance: none;
   }
 
   button {
     cursor: pointer;
   }
 }
+
+
 
 select[class*="ais-"] {
   appearance: none;
@@ -57,4 +61,18 @@ select[class*="ais-"] {
   font-weight: 600;
   text-align: center;
   color: #697782;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 4px;
+  text-align: left;
+
+  &:hover,
+  &:active {
+    box-shadow: none;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    background: darken(white, 5%) url("data:image/svg+xml;utf8,<svg viewBox=\'0 0 12 7\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M11 1L6.02 6 1 1\' stroke-width=\'1.5\' stroke=\'%23BFC7D8\' fill=\'none\' fill-rule=\'evenodd\' stroke-linecap=\'round\'/></svg>") no-repeat center right 16px / 10px
+  }
 }

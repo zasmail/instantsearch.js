@@ -27,6 +27,7 @@ class MultiRange extends Component {
           checked={item.isRefined}
           onChange={refine.bind(null, item.value)}
         />
+        <span {...applyTheme('itemBox', 'itemBox', item.isRefined && 'itemBoxSelected')}></span>
         <span {...applyTheme('itemLabel', 'itemLabel', item.isRefined && 'itemLabelSelected')}>
           {item.label}
         </span>

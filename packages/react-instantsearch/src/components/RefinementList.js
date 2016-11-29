@@ -36,6 +36,7 @@ class RefinementList extends Component {
           checked={item.isRefined}
           onChange={() => this.props.refine(item.value)}
         />
+        <span {...applyTheme('itemBox', 'itemBox', item.isRefined && 'itemBoxSelected')}></span>
         <span {...applyTheme('itemLabel', 'itemLabel', item.isRefined && 'itemLabelSelected')}>
           {item.label}
         </span>
