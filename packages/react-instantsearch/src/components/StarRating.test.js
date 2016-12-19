@@ -60,7 +60,7 @@ describe('StarRating', () => {
       {value: '4', count: 3},
       {value: '5', count: 0}]}
   />;
-  const wrapper = mount(starRating);
+  let wrapper = mount(starRating);
 
   beforeEach(() => {
     refine.mockClear();
@@ -122,5 +122,26 @@ describe('StarRating', () => {
 
     expect(fullIcon.length).toBe(1);
     expect(emptyIcon.length).toBe(4);
+  });
+
+  it('clicking on the selected refinement should select the largest range', () => {
+    wrapper = mount(<StarRating
+      createURL={() => '#'}
+      refine={refine}
+      min={1}
+      max={5}
+      currentRefinement={{min: 5, max: 5}}
+      count={[{value: '1', count: 1},
+        {value: '2', count: 2},
+        {value: '3', count: 3},
+        {value: '4', count: 4},
+        {value: '5', count: 5}]}
+    />);
+    const links = wrapper.find('.ais-StarRating__ratingLink');
+
+    links.first().simulate('click');
+
+    expect(refine.mock.calls.length).toBe(1);
+    expect(refine.mock.calls[0][0]).toEqual({min: 1, max: 5});
   });
 });
